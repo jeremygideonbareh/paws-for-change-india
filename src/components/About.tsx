@@ -53,9 +53,9 @@ export default function About() {
         >
           <div className="gradient-border overflow-hidden rounded-2xl">
             <img
-              src="https://picsum.photos/seed/about-rescue/800/600"
+              src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=800&q=80&fm=webp&fit=crop"
               alt="Animal rescue in action"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover animate-fade-in"
               loading="lazy"
             />
           </div>

@@ -14,6 +14,15 @@ const partners = [
 export default function Partners() {
   return (
     <section className="relative overflow-hidden bg-background py-24">
+      {/* Decorative photo */}
+      <div className="pointer-events-none absolute bottom-0 left-0 h-56 w-56 overflow-hidden opacity-[0.03] max-md:hidden">
+        <img
+          src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=400&q=60&fm=webp&fit=crop"
+          alt=""
+          className="h-full w-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
       {/* Heading */}
       <div className="mx-auto max-w-7xl px-6 text-center">
         <motion.h2

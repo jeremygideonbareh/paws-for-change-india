@@ -43,14 +43,16 @@ export default function Hero() {
         <div className="absolute -top-20 right-1/3 h-[350px] w-[350px] rounded-full bg-accent-light/8 blur-[100px]" />
       </motion.div>
 
-      {/* Background image - subtle, low opacity */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.07]">
+      {/* Cinematic dog photo backdrop */}
+      <div className="pointer-events-none absolute inset-0 opacity-20">
         <img
-          src="https://picsum.photos/seed/hero-pets/1920/1080"
+          src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=1920&q=80&fm=webp&fit=crop"
           alt=""
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover animate-blur-in"
+          fetchPriority="high"
           aria-hidden="true"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/10" />
       </div>
 
       {/* Main content with parallax */}

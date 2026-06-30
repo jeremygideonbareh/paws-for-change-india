@@ -9,6 +9,7 @@ const stories = [
     age: '2 yrs',
     breed: 'Indie',
     location: 'Mumbai',
+    imageUrl: '1609220136736-443140cffec6',
     story:
       'Found on the streets with a broken leg, Luna made a full recovery and now enjoys beach walks with her forever family.',
   },
@@ -17,6 +18,7 @@ const stories = [
     age: '5 yrs',
     breed: 'Labrador',
     location: 'Pune',
+    imageUrl: '1453227588063-bb302b62f50b',
     story:
       'Max survived a road accident and spent months in recovery. Today he brings joy to everyone he meets.',
   },
@@ -25,6 +27,7 @@ const stories = [
     age: '3 yrs',
     breed: 'Beagle',
     location: 'Delhi',
+    imageUrl: '1537151625747-768eb6cf92b2',
     story:
       'Abandoned as a puppy, Bella was adopted by a senior couple who say she brought joy back into their home.',
   },
@@ -33,6 +36,7 @@ const stories = [
     age: '1 yr',
     breed: 'Indie',
     location: 'Bangalore',
+    imageUrl: '1477884213360-7e9d7dcc1e48',
     story:
       'Found dehydrated and malnourished, Charlie was nursed back to health and found his forever home within weeks.',
   },
@@ -41,6 +45,7 @@ const stories = [
     age: '4 yrs',
     breed: 'Spitz',
     location: 'Mumbai',
+    imageUrl: '1546527868-ccb7ee7dfa6a',
     story:
       'After years on the street, Daisy now lives like a queen — with a garden to explore and a family who adores her.',
   },
@@ -49,6 +54,7 @@ const stories = [
     age: '6 yrs',
     breed: 'Rottweiler',
     location: 'Chennai',
+    imageUrl: '1588943211346-0908a1fb0b01',
     story:
       'Rocky was rescued from an abusive situation. With patience and love, he has become the gentlest family dog.',
   },
@@ -94,9 +100,9 @@ export default function SuccessStories() {
               <div className="relative overflow-hidden">
                 <div className="aspect-video">
                   <img
-                    src={`https://picsum.photos/seed/${story.name.toLowerCase()}/600/700`}
+                    src={`https://images.unsplash.com/photo-${story.imageUrl}?w=600&q=80&fm=webp&fit=crop`}
                     alt={story.name}
-                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 animate-fade-in"
                     loading="lazy"
                   />
                 </div>

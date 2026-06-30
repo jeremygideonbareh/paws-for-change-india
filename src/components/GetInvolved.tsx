@@ -10,6 +10,7 @@ const ways = [
     desc: 'Your contribution helps us provide food, shelter, and medical care to animals in need.',
     action: 'Donate Now',
     href: '#',
+    imageUrl: '1552053831-71594a27632d',
   },
   {
     icon: HandHeart,
@@ -17,6 +18,7 @@ const ways = [
     desc: 'Join our network of volunteers for rescue operations, events, and community outreach.',
     action: 'Sign Up',
     href: '#',
+    imageUrl: '1559190394-df5a28aab5c5',
   },
   {
     icon: Calendar,
@@ -24,6 +26,7 @@ const ways = [
     desc: 'Open your home temporarily to an animal in recovery. We provide all supplies and support.',
     action: 'Learn More',
     href: '#',
+    imageUrl: '1450778869180-41d0601e046e',
   },
 ];
 
@@ -57,8 +60,18 @@ export default function GetInvolved() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-                className="group rounded-2xl border border-border bg-background p-8 transition-all hover:border-accent/30"
+                className="group relative overflow-hidden rounded-2xl border border-border bg-background p-8 transition-all hover:border-accent/30"
               >
+                {/* Decorative photo behind icon */}
+                <div className="pointer-events-none absolute -right-6 -top-6 h-32 w-32 overflow-hidden rounded-full opacity-[0.06] transition-opacity duration-500 group-hover:opacity-[0.12]">
+                  <img
+                    src={`https://images.unsplash.com/photo-${way.imageUrl}?w=300&q=60&fm=webp&fit=crop`}
+                    alt=""
+                    className="h-full w-full object-cover"
+                    aria-hidden="true"
+                    loading="lazy"
+                  />
+                </div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
                   <Icon size={24} weight="fill" className="text-accent" />
                 </div>

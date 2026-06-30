@@ -21,7 +21,7 @@ interface Program {
   description: string;
   stat: string;
   statLabel: string;
-  imageSeed: string;
+  imageUrl: string;
 }
 
 const programs: Program[] = [
@@ -32,7 +32,7 @@ const programs: Program[] = [
       'Veterinary treatment and rehabilitation for injured and sick stray animals across Mumbai.',
     stat: '12,450+',
     statLabel: 'Animals Treated',
-    imageSeed: 'medical',
+    imageUrl: '1530281700549-e82e7bf110d6',
   },
   {
     icon: Siren,
@@ -41,7 +41,7 @@ const programs: Program[] = [
       '24/7 emergency rescue team responding to animals in distress across the city.',
     stat: '3,200+',
     statLabel: 'Rescues This Year',
-    imageSeed: 'rescue',
+    imageUrl: '1544568100-847a948585b9',
   },
   {
     icon: House,
@@ -50,7 +50,7 @@ const programs: Program[] = [
       'Finding loving forever homes through careful screening and post-adoption support.',
     stat: '2,800+',
     statLabel: 'Forever Homes',
-    imageSeed: 'adoption',
+    imageUrl: '1583511655857-d19b40a7a54e',
   },
   {
     icon: Syringe,
@@ -59,7 +59,7 @@ const programs: Program[] = [
       'Humane population management through mass sterilization and vaccination camps.',
     stat: '8,500+',
     statLabel: 'Procedures Done',
-    imageSeed: 'sterilization',
+    imageUrl: '1601758228041-f3b2795255f1',
   },
   {
     icon: BookOpen,
@@ -68,7 +68,7 @@ const programs: Program[] = [
       'Teaching compassion and animal welfare awareness to school children and communities.',
     stat: '15,000+',
     statLabel: 'Students Reached',
-    imageSeed: 'education',
+    imageUrl: '1587402092301-725e37c70fd8',
   },
   {
     icon: PawPrint,
@@ -77,7 +77,7 @@ const programs: Program[] = [
       'Disaster relief and emergency aid for animals affected by natural calamities.',
     stat: '24/7',
     statLabel: 'Rapid Response',
-    imageSeed: 'emergency',
+    imageUrl: '1600804340584-c7db2eacf0bf',
   },
 ];
 
@@ -103,9 +103,10 @@ export default function Programs() {
         scrollTrigger: {
           trigger: wrap.current,
           start: 'top top',
-          end: () => `+=${distance}`,
+          end: () => `+=${distance + 150}`,
           pin: true,
-          scrub: 1,
+          anticipatePin: 1,
+          scrub: 1.5,
           invalidateOnRefresh: true,
         },
       });
@@ -167,9 +168,9 @@ export default function Programs() {
               {/* ── Card image ── */}
               <div className="relative h-[45%] min-h-[200px] overflow-hidden">
                 <img
-                  src={`https://picsum.photos/seed/${program.imageSeed}/600/800`}
+                  src={`https://images.unsplash.com/photo-${program.imageUrl}?w=600&q=80&fm=webp&fit=crop`}
                   alt={program.title}
-                  className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105 animate-fade-in"
                   loading={i < 2 ? 'eager' : 'lazy'}
                 />
                 {/* Gradient overlay from image into content */}
