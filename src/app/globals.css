@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0a0a0a;
-  --color-foreground: #fafafa;
-  --color-muted: #a3a3a3;
-  --color-accent: #d4a853;
-  --color-accent-dark: #b8923e;
-  --color-accent-light: #e8c46a;
-  --color-surface: #111111;
-  --color-surface-elevated: #1a1a1a;
-  --color-border: #222222;
-  --color-border-light: #2a2a2a;
+  --color-background: #fafafa;
+  --color-foreground: #171717;
+  --color-muted: #737373;
+  --color-accent: #e63946;
+  --color-accent-dark: #c1121f;
+  --color-accent-light: #f72585;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #fff5f5;
+  --color-border: #e5e5e5;
+  --color-border-light: #f0f0f0;
   --font-display: "Outfit", sans-serif;
   --font-body: "Inter", sans-serif;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #d4a853 #0a0a0a;
+  scrollbar-color: #e63946 #f0f0f0;
 }
 
 *::-webkit-scrollbar {
@@ -25,23 +25,23 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #f0f0f0;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #d4a853;
+  background: #e63946;
   border-radius: 3px;
 }
 
 body {
-  background: #0a0a0a;
-  color: #fafafa;
+  background: #fafafa;
+  color: #171717;
   font-family: var(--font-body);
 }
 
 ::selection {
-  background: #d4a853;
-  color: #0a0a0a;
+  background: #e63946;
+  color: #ffffff;
 }
 
 @keyframes float {
@@ -69,16 +69,11 @@ body {
 }
 
 .animate-marquee-reverse {
-  animation: marquee 40s linear infinite;
-  animation-direction: reverse;
-}
-
-.animate-marquee-reverse {
   animation: marquee-reverse 40s linear infinite;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #fafafa 0%, #d4a853 100%);
+  background: linear-gradient(135deg, #171717 0%, #e63946 50%, #f72585 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -94,7 +89,7 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, #d4a853, transparent, #d4a853);
+  background: linear-gradient(135deg, #e63946, #f72585, #e63946);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -106,6 +101,6 @@ body {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.03;
+  opacity: 0.015;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }

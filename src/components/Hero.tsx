@@ -37,10 +37,10 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0"
         style={{ scale: orbsScale, opacity: orbsOpacity }}
       >
-        <div className="absolute top-1/4 right-0 h-[500px] w-[500px] rounded-full bg-accent/10 blur-[140px]" />
-        <div className="absolute -bottom-32 left-1/4 h-[600px] w-[600px] rounded-full bg-accent/5 blur-[160px]" />
-        <div className="absolute top-1/3 left-0 h-[400px] w-[400px] rounded-full bg-accent/8 blur-[120px]" />
-        <div className="absolute -top-20 right-1/3 h-[350px] w-[350px] rounded-full bg-accent/6 blur-[100px]" />
+        <div className="absolute top-1/4 right-0 h-[500px] w-[500px] rounded-full bg-accent/15 blur-[140px]" />
+        <div className="absolute -bottom-32 left-1/4 h-[600px] w-[600px] rounded-full bg-accent-light/10 blur-[160px]" />
+        <div className="absolute top-1/3 left-0 h-[400px] w-[400px] rounded-full bg-accent/10 blur-[120px]" />
+        <div className="absolute -top-20 right-1/3 h-[350px] w-[350px] rounded-full bg-accent-light/8 blur-[100px]" />
       </motion.div>
 
       {/* Background image - subtle, low opacity */}
@@ -62,7 +62,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           style={{ y: subheadingY, opacity: headingOpacity }}
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5 text-sm text-accent">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/8 px-4 py-1.5 text-sm font-medium text-accent">
             <PawPrint size={16} weight="fill" />
             <span>Animal Rescue &amp; Adoption NGO — India</span>
           </div>
