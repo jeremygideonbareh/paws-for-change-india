@@ -72,7 +72,7 @@ export default function Hero() {
 
         {/* Headline */}
         <motion.h1
-          className="font-display text-6xl font-black leading-tight tracking-tight text-foreground sm:text-7xl md:text-8xl"
+          className="font-display text-5xl font-black leading-tight tracking-tight text-foreground sm:text-7xl md:text-8xl"
           style={{ y: headingY, opacity: headingOpacity }}
         >
           Every Paw
@@ -91,7 +91,7 @@ export default function Hero() {
 
         {/* CTAs */}
         <motion.div
-          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mt-6 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row"
           style={{ y: ctaY, opacity: headingOpacity }}
         >
           <a
@@ -112,7 +112,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-36 left-1/2 z-10 -translate-x-1/2"
+        className="absolute bottom-24 left-1/2 z-10 -translate-x-1/2 max-md:hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
@@ -140,7 +140,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        <div className="mx-auto max-w-6xl px-6 py-5">
+        <div className="mx-auto max-w-6xl px-6 py-3 md:py-5">
           <p className="mb-3 text-center text-xs font-medium tracking-widest uppercase text-muted/50">
             Trusted by
           </p>
