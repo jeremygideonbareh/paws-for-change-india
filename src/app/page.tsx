@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 // Static imports
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
+import TrustBar from '@/components/TrustBar';
 import ImpactStats from '@/components/ImpactStats';
 import About from '@/components/About';
 import SuccessStories from '@/components/SuccessStories';
@@ -20,6 +21,8 @@ export default function Home() {
       <Navigation />
 
       <Hero />
+
+      <TrustBar />
 
       <ImpactStats />
 

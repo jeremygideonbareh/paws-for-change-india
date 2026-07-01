@@ -97,17 +97,21 @@ export default function Programs() {
       const distance = trackEl.scrollWidth - window.innerWidth;
       if (distance <= 0) return;
 
-      gsap.to(trackEl, {
-        x: -distance,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: wrap.current,
-          start: 'top top',
-          end: () => `+=${distance + 150}`,
-          pin: true,
-          anticipatePin: 1,
-          scrub: 1.5,
-          invalidateOnRefresh: true,
+      const buffer = window.innerHeight * 0.5;
+      const scrollDistance = distance + buffer;
+
+      ScrollTrigger.create({
+        trigger: wrap.current,
+        start: 'top top',
+        end: () => `+=${scrollDistance}`,
+        pin: true,
+        anticipatePin: 1,
+        scrub: 1.5,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          const scrolled = self.progress * scrollDistance;
+          const xProgress = Math.min(scrolled / distance, 1);
+          gsap.set(trackEl, { x: -xProgress * distance });
         },
       });
     }, wrap);

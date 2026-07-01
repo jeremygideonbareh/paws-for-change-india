@@ -4,14 +4,6 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { PawPrint, ArrowRight, CaretDown } from '@phosphor-icons/react';
 
-const PARTNERS = [
-  'Animal Welfare Board of India',
-  'PETA India',
-  'World Animal Protection',
-  'Blue Cross of India',
-  'People for Animals',
-];
-
 export default function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -133,32 +125,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Trusted by strip */}
-      <motion.div
-        className="absolute bottom-0 left-0 right-0 z-10 border-t border-border/50 bg-background/60 backdrop-blur-sm"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <div className="mx-auto max-w-6xl px-6 py-3 md:py-5">
-          <p className="mb-3 text-center text-xs font-medium tracking-widest uppercase text-muted/50">
-            Trusted by
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
-            {PARTNERS.map((name) => (
-              <span
-                key={name}
-                className="text-sm font-medium text-muted/40 transition-colors hover:text-muted/60"
-              >
-                {name}
-              </span>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Bottom fade - sits below trusted strip */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" style={{ zIndex: 9 }} />
     </section>
   );
 }
