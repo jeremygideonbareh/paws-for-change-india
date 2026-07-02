@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'motion/react';
 import { HandHeart, CurrencyCircleDollar, Calendar } from '@phosphor-icons/react';
 
@@ -96,13 +97,13 @@ export default function GetInvolved() {
                   {way.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{way.desc}</p>
-                <a
+                <Link
                   href={way.href}
                   className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-background transition-all hover:bg-accent-dark"
                 >
                   {way.action}
                   <span aria-hidden="true">&rarr;</span>
-                </a>
+                </Link>
               </motion.div>
             );
           })}

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { PawPrint } from '@phosphor-icons/react';
 import {
   FacebookLogo,
@@ -79,12 +80,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {programs.map((program) => (
                 <li key={program.name}>
-                  <a
+                  <Link
                     href={program.href}
                     className="text-sm text-muted transition-colors duration-200 hover:text-accent"
                   >
                     {program.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -204,12 +205,12 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 text-xs text-muted sm:flex-row">
           <p>&copy; {currentYear} Paws for Change India. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <a href="/faq" className="transition-colors hover:text-accent">
+            <Link href="/faq" className="transition-colors hover:text-accent">
               FAQ
-            </a>
-            <a href="/contact" className="transition-colors hover:text-accent">
+            </Link>
+            <Link href="/contact" className="transition-colors hover:text-accent">
               Contact Us
-            </a>
+            </Link>
             <span className="text-border-light">|</span>
             <span>80G: AAACP1234F</span>
             <span className="text-border-light">|</span>

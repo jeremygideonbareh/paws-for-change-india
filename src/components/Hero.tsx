@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { PawPrint, ArrowRight, CaretDown } from '@phosphor-icons/react';
 
@@ -118,19 +119,19 @@ export default function Hero() {
           className="mt-6 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row"
           style={{ y: ctaY, opacity: headingOpacity }}
         >
-          <a
+          <Link
             href="/donate"
             className="flex items-center gap-2 rounded-full bg-accent px-8 py-3 text-sm font-semibold text-background transition-all hover:bg-accent-dark"
           >
             Donate Now
             <ArrowRight size={16} weight="bold" />
-          </a>
-          <a
+          </Link>
+          <Link
             href="/programs"
             className="flex items-center gap-2 rounded-full border border-border px-8 py-3 text-sm font-semibold text-foreground transition-all hover:border-accent hover:text-accent"
           >
             Our Programs
-          </a>
+          </Link>
         </motion.div>
       </div>
 

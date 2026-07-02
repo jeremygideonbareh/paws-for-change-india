@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Heart } from '@phosphor-icons/react';
 import { successStories } from '@/content/stories';
@@ -76,7 +77,7 @@ export default function SuccessStories() {
 
                 <p className="mt-4 text-sm leading-relaxed text-muted">{story.excerpt}</p>
 
-                <a
+                <Link
                   href={`/stories/${story.slug}`}
                   className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-light"
                 >
@@ -84,7 +85,7 @@ export default function SuccessStories() {
                   <span aria-hidden="true" className="text-xs transition-transform group-hover:translate-x-0.5">
                     &rarr;
                   </span>
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}

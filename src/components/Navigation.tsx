@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'motion/react';
 import { PawPrint, List, X } from '@phosphor-icons/react';
 
@@ -80,12 +81,12 @@ export default function Navigation() {
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           {/* ── Logo ── */}
-          <a href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <PawPrint size={24} weight="fill" className="text-accent" />
             <span className="font-display text-lg font-bold text-foreground">
               Paws for Change
             </span>
-          </a>
+          </Link>
 
           {/* ── Desktop nav ── */}
           <div className="hidden items-center gap-8 md:flex">
@@ -93,7 +94,7 @@ export default function Navigation() {
               const sectionId = link.href.replace('#', '');
               const isActive = activeSection === sectionId;
               return (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   className={`relative text-sm font-medium transition-colors ${
@@ -113,16 +114,16 @@ export default function Navigation() {
                       }}
                     />
                   )}
-                </a>
+                </Link>
               );
             })}
-            <a
+            <Link
               href="/donate"
               onClick={handleLinkClick}
               className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-background transition-all hover:bg-accent-dark"
             >
               Donate Now
-            </a>
+            </Link>
           </div>
 
           {/* ── Mobile hamburger ── */}
@@ -170,7 +171,7 @@ export default function Navigation() {
                   const sectionId = link.href.replace('#', '');
                   const isActive = activeSection === sectionId;
                   return (
-                    <a
+                    <Link
                       key={link.name}
                       href={link.href}
                       onClick={handleLinkClick}
@@ -181,19 +182,19 @@ export default function Navigation() {
                       }`}
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   );
                 })}
               </nav>
 
               <div className="mt-auto border-t border-border px-6 py-8">
-                <a
+                <Link
                   href="/donate"
                   onClick={handleLinkClick}
                   className="flex w-full items-center justify-center rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-background transition-all hover:bg-accent-dark"
                 >
                   Donate Now
-                </a>
+                </Link>
               </div>
             </motion.div>
           </>
