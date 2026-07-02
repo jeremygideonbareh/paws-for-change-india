@@ -87,14 +87,14 @@ export default function Hero() {
           style={{ y: ctaY, opacity: headingOpacity }}
         >
           <a
-            href="#involved"
+            href="/donate"
             className="flex items-center gap-2 rounded-full bg-accent px-8 py-3 text-sm font-semibold text-background transition-all hover:bg-accent-dark"
           >
-            Get Involved
+            Donate Now
             <ArrowRight size={16} weight="bold" />
           </a>
           <a
-            href="#programs"
+            href="/programs"
             className="flex items-center gap-2 rounded-full border border-border px-8 py-3 text-sm font-semibold text-foreground transition-all hover:border-accent hover:text-accent"
           >
             Our Programs

@@ -9,7 +9,7 @@ const ways = [
     title: 'Donate',
     desc: 'Your contribution helps us provide food, shelter, and medical care to animals in need.',
     action: 'Donate Now',
-    href: '#',
+    href: '/donate',
     imageUrl: '1552053831-71594a27632d',
   },
   {
@@ -17,7 +17,7 @@ const ways = [
     title: 'Volunteer',
     desc: 'Join our network of volunteers for rescue operations, events, and community outreach.',
     action: 'Sign Up',
-    href: '#',
+    href: '/contact',
     imageUrl: '1559190394-df5a28aab5c5',
   },
   {
@@ -25,7 +25,7 @@ const ways = [
     title: 'Foster',
     desc: 'Open your home temporarily to an animal in recovery. We provide all supplies and support.',
     action: 'Learn More',
-    href: '#',
+    href: '/contact',
     imageUrl: '1450778869180-41d0601e046e',
   },
 ];

@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
 
 // Static imports
-import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import TrustBar from '@/components/TrustBar';
 import ImpactStats from '@/components/ImpactStats';
@@ -9,7 +8,6 @@ import About from '@/components/About';
 import SuccessStories from '@/components/SuccessStories';
 import GetInvolved from '@/components/GetInvolved';
 import Partners from '@/components/Partners';
-import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
 
 // GSAP-heavy component wrapped in a Client Component with ssr: false
@@ -17,9 +15,7 @@ import ProgramsWrapper from '@/components/ProgramsWrapper';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
-      <Navigation />
-
+    <>
       <Hero />
 
       <TrustBar />
@@ -53,8 +49,6 @@ export default function Home() {
       </ScrollReveal>
 
       <Partners />
-
-      <Footer />
-    </main>
+    </>
   );
 }

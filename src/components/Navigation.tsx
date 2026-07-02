@@ -5,10 +5,12 @@ import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'motion/
 import { PawPrint, List, X } from '@phosphor-icons/react';
 
 const navLinks = [
-  { name: 'About', href: '#about' },
-  { name: 'Programs', href: '#programs' },
-  { name: 'Success Stories', href: '#stories' },
-  { name: 'Get Involved', href: '#involved' },
+  { name: 'About', href: '/about' },
+  { name: 'Programs', href: '/programs' },
+  { name: 'Stories', href: '/stories' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Get Involved', href: '/contact' },
+  { name: 'FAQ', href: '/faq' },
 ];
 
 export default function Navigation() {
@@ -78,7 +80,7 @@ export default function Navigation() {
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           {/* ── Logo ── */}
-          <a href="#" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <PawPrint size={24} weight="fill" className="text-accent" />
             <span className="font-display text-lg font-bold text-foreground">
               Paws for Change
@@ -115,7 +117,7 @@ export default function Navigation() {
               );
             })}
             <a
-              href="#involved"
+              href="/donate"
               onClick={handleLinkClick}
               className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-background transition-all hover:bg-accent-dark"
             >
@@ -186,7 +188,7 @@ export default function Navigation() {
 
               <div className="mt-auto border-t border-border px-6 py-8">
                 <a
-                  href="#involved"
+                  href="/donate"
                   onClick={handleLinkClick}
                   className="flex w-full items-center justify-center rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-background transition-all hover:bg-accent-dark"
                 >

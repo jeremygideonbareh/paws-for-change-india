@@ -9,11 +9,11 @@ import {
 } from '@phosphor-icons/react';
 
 const programs = [
-  { name: 'Medical Outreach', href: '#programs' },
-  { name: 'Adoption Drive', href: '#programs' },
-  { name: 'Community Clinics', href: '#programs' },
-  { name: 'Sterilization Camps', href: '#programs' },
-  { name: 'Rescue Response', href: '#programs' },
+  { name: 'Medical Care', href: '/programs#medical-care' },
+  { name: 'Adoption Program', href: '/programs#adoption-program' },
+  { name: 'Sterilization Drives', href: '/programs#sterilization-drives' },
+  { name: 'Community Education', href: '/programs#community-education' },
+  { name: 'Rescue Operations', href: '/programs#rescue-operations' },
 ];
 
 export default function Footer() {
@@ -113,28 +113,36 @@ export default function Footer() {
             </h3>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://facebook.com/pawsforchangeindia"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-all duration-200 hover:border-accent hover:text-accent"
                 aria-label="Facebook"
               >
                 <FacebookLogo size={18} weight="fill" />
               </a>
               <a
-                href="#"
+                href="https://instagram.com/pawsforchangeindia"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-all duration-200 hover:border-accent hover:text-accent"
                 aria-label="Instagram"
               >
                 <InstagramLogo size={18} weight="fill" />
               </a>
               <a
-                href="#"
+                href="https://twitter.com/pawsforchange"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-all duration-200 hover:border-accent hover:text-accent"
                 aria-label="Twitter"
               >
                 <TwitterLogo size={18} weight="fill" />
               </a>
               <a
-                href="#"
+                href="https://youtube.com/@pawsforchangeindia"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-all duration-200 hover:border-accent hover:text-accent"
                 aria-label="YouTube"
               >
@@ -148,11 +156,14 @@ export default function Footer() {
                 Newsletter
               </h4>
               <form
-                onSubmit={(e) => e.preventDefault()}
+                action="https://pawsforchangeindia.us21.list-manage.com/subscribe/post?u=YOUR_MAILCHIMP_U&amp;id=YOUR_MAILCHIMP_ID"
+                method="post"
+                target="_blank"
                 className="flex gap-2"
               >
                 <input
                   type="email"
+                  name="EMAIL"
                   placeholder="Your email"
                   className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                   required
@@ -177,11 +188,11 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 text-xs text-muted sm:flex-row">
           <p>&copy; {currentYear} Paws for Change India. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <a href="#" className="transition-colors hover:text-accent">
-              Privacy Policy
+            <a href="/faq" className="transition-colors hover:text-accent">
+              FAQ
             </a>
-            <a href="#" className="transition-colors hover:text-accent">
-              Terms of Service
+            <a href="/contact" className="transition-colors hover:text-accent">
+              Contact Us
             </a>
             <span className="text-border-light">|</span>
             <span>80G: AAACP1234F</span>

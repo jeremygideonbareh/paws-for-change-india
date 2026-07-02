@@ -2,63 +2,9 @@
 
 import { motion } from 'motion/react';
 import { Heart } from '@phosphor-icons/react';
+import { successStories } from '@/content/stories';
 
-const stories = [
-  {
-    name: 'Luna',
-    age: '2 yrs',
-    breed: 'Indie',
-    location: 'Mumbai',
-    imageUrl: '1609220136736-443140cffec6',
-    story:
-      'Found on the streets with a broken leg, Luna made a full recovery and now enjoys beach walks with her forever family.',
-  },
-  {
-    name: 'Max',
-    age: '5 yrs',
-    breed: 'Labrador',
-    location: 'Pune',
-    imageUrl: '1453227588063-bb302b62f50b',
-    story:
-      'Max survived a road accident and spent months in recovery. Today he brings joy to everyone he meets.',
-  },
-  {
-    name: 'Bella',
-    age: '3 yrs',
-    breed: 'Beagle',
-    location: 'Delhi',
-    imageUrl: '1537151625747-768eb6cf92b2',
-    story:
-      'Abandoned as a puppy, Bella was adopted by a senior couple who say she brought joy back into their home.',
-  },
-  {
-    name: 'Charlie',
-    age: '1 yr',
-    breed: 'Indie',
-    location: 'Bangalore',
-    imageUrl: '1477884213360-7e9d7dcc1e48',
-    story:
-      'Found dehydrated and malnourished, Charlie was nursed back to health and found his forever home within weeks.',
-  },
-  {
-    name: 'Daisy',
-    age: '4 yrs',
-    breed: 'Spitz',
-    location: 'Mumbai',
-    imageUrl: '1546527868-ccb7ee7dfa6a',
-    story:
-      'After years on the street, Daisy now lives like a queen — with a garden to explore and a family who adores her.',
-  },
-  {
-    name: 'Rocky',
-    age: '6 yrs',
-    breed: 'Rottweiler',
-    location: 'Chennai',
-    imageUrl: '1588943211346-0908a1fb0b01',
-    story:
-      'Rocky was rescued from an abusive situation. With patience and love, he has become the gentlest family dog.',
-  },
-];
+const stories = successStories.slice(0, 6);
 
 export default function SuccessStories() {
   return (
@@ -128,10 +74,10 @@ export default function SuccessStories() {
                   />
                 </div>
 
-                <p className="mt-4 text-sm leading-relaxed text-muted">{story.story}</p>
+                <p className="mt-4 text-sm leading-relaxed text-muted">{story.excerpt}</p>
 
                 <a
-                  href="#"
+                  href={`/stories/${story.slug}`}
                   className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-light"
                 >
                   Read full story
