@@ -21,10 +21,26 @@ export default function Footer() {
 
   return (
     <footer className="relative border-t border-border bg-background">
-      {/* Decorative photo */}
+      {/* Decorative photos */}
       <div className="pointer-events-none absolute right-0 bottom-0 h-48 w-48 overflow-hidden opacity-[0.03] max-md:hidden">
         <img
           src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=400&q=60&fm=webp&fit=crop"
+          alt=""
+          className="h-full w-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="pointer-events-none absolute left-0 top-1/3 h-36 w-36 overflow-hidden opacity-[0.03] max-md:hidden">
+        <img
+          src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=300&q=60&fm=webp&fit=crop"
+          alt=""
+          className="h-full w-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="pointer-events-none absolute right-[20%] top-[15%] h-24 w-24 overflow-hidden rounded-full opacity-[0.03] max-md:hidden">
+        <img
+          src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=180&q=60&fm=webp&fit=crop"
           alt=""
           className="h-full w-full object-cover"
           aria-hidden="true"

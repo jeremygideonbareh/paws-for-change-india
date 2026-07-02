@@ -33,6 +33,23 @@ const ways = [
 export default function GetInvolved() {
   return (
     <section id="involved" className="relative bg-surface py-24">
+      {/* Decorative photos */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute bottom-[10%] right-[5%] h-40 w-40 overflow-hidden rounded-2xl opacity-[0.03]">
+          <img
+            src="https://images.unsplash.com/photo-1546527868-ccb7ee7dfa6a?w=280&q=60&fm=webp&fit=crop"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="absolute top-[15%] left-[3%] h-32 w-32 overflow-hidden rounded-2xl opacity-[0.03]">
+          <img
+            src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=240&q=60&fm=webp&fit=crop"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </div>
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

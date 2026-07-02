@@ -47,6 +47,38 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/10" />
       </div>
 
+      {/* Floating pet images */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute top-[15%] right-[8%] h-28 w-28 rotate-12 overflow-hidden rounded-2xl opacity-15 shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=200&q=60&fm=webp&fit=crop"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="absolute bottom-[25%] left-[6%] h-36 w-36 -rotate-6 overflow-hidden rounded-2xl opacity-10 shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=250&q=60&fm=webp&fit=crop"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="absolute top-[40%] left-[12%] h-20 w-20 rotate-45 overflow-hidden rounded-xl opacity-12 shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=160&q=60&fm=webp&fit=crop"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="absolute bottom-[15%] right-[12%] h-24 w-24 -rotate-12 overflow-hidden rounded-xl opacity-10 shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=180&q=60&fm=webp&fit=crop"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+
       {/* Main content with parallax */}
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         {/* Badge */}

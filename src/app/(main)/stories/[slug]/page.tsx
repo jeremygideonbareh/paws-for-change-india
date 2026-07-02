@@ -46,7 +46,16 @@ export default async function StoryPage({ params }: Props) {
   if (!story) notFound();
 
   return (
-    <article className="bg-background py-24">
+    <article className="relative bg-background py-24">
+      {/* Decorative pet images */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute top-[5%] right-[3%] h-32 w-32 overflow-hidden rounded-2xl opacity-[0.04]">
+          <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=220&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+        </div>
+        <div className="absolute bottom-[10%] left-[2%] h-28 w-28 overflow-hidden rounded-2xl opacity-[0.04]">
+          <img src="https://images.unsplash.com/photo-1546527868-ccb7ee7dfa6a?w=200&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+        </div>
+      </div>
       <div className="mx-auto max-w-3xl px-6">
         {/* Back Link */}
         <ScrollReveal>

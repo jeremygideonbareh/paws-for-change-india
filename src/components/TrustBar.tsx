@@ -12,7 +12,25 @@ const partners = [
 
 export default function TrustBar() {
   return (
-    <section className="relative border-y border-border/50 bg-background/60 py-5 backdrop-blur-sm md:py-6">
+    <section className="relative overflow-hidden border-y border-border/50 bg-background/60 py-5 backdrop-blur-sm md:py-6">
+      {/* Decorative photos */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-between px-10 opacity-[0.04]" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=120&q=60&fm=webp&fit=crop"
+          alt=""
+          className="h-12 w-12 rounded-full object-cover"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=120&q=60&fm=webp&fit=crop"
+          alt=""
+          className="h-10 w-10 rounded-full object-cover"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=120&q=60&fm=webp&fit=crop"
+          alt=""
+          className="h-14 w-14 rounded-full object-cover"
+        />
+      </div>
       <div className="mx-auto max-w-6xl px-6">
         <motion.p
           initial={{ opacity: 0, y: 10 }}

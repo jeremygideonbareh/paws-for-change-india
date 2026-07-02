@@ -22,6 +22,15 @@ export default function FAQPage() {
           <div className="absolute top-0 left-1/4 h-[350px] w-[350px] rounded-full bg-accent/10 blur-[120px]" />
           <div className="absolute bottom-0 right-1/4 h-[250px] w-[250px] rounded-full bg-accent-light/8 blur-[100px]" />
         </div>
+        {/* Decorative pet images */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute top-[15%] right-[5%] h-40 w-40 overflow-hidden rounded-2xl opacity-[0.04]">
+            <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=300&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+          </div>
+          <div className="absolute bottom-[10%] left-[3%] h-32 w-32 overflow-hidden rounded-2xl opacity-[0.04]">
+            <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=240&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+          </div>
+        </div>
 
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal>

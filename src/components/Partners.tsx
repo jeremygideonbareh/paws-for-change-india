@@ -14,10 +14,26 @@ const partners = [
 export default function Partners() {
   return (
     <section className="relative overflow-hidden bg-background py-24">
-      {/* Decorative photo */}
+      {/* Decorative photos */}
       <div className="pointer-events-none absolute bottom-0 left-0 h-56 w-56 overflow-hidden opacity-[0.03] max-md:hidden">
         <img
           src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=400&q=60&fm=webp&fit=crop"
+          alt=""
+          className="h-full w-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="pointer-events-none absolute top-0 right-0 h-48 w-48 overflow-hidden opacity-[0.03] max-md:hidden">
+        <img
+          src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=350&q=60&fm=webp&fit=crop"
+          alt=""
+          className="h-full w-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="pointer-events-none absolute top-1/2 right-[8%] h-28 w-28 overflow-hidden rounded-full opacity-[0.03]">
+        <img
+          src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=180&q=60&fm=webp&fit=crop"
           alt=""
           className="h-full w-full object-cover"
           aria-hidden="true"

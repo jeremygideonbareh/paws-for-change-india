@@ -226,7 +226,16 @@ export default function AboutPage() {
       </section>
 
       {/* ════════════════ Team & History ════════════════ */}
-      <section className="bg-background py-24">
+      <section className="relative bg-background py-24">
+        {/* Decorative pet images */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute top-[30%] right-[2%] h-48 w-48 overflow-hidden rounded-2xl opacity-[0.04]">
+            <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=350&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+          </div>
+          <div className="absolute bottom-[10%] left-[2%] h-36 w-36 overflow-hidden rounded-2xl opacity-[0.03]">
+            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=280&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+          </div>
+        </div>
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -262,25 +271,44 @@ export default function AboutPage() {
           </div>
 
           <ScrollReveal delay={0.4}>
-            <div className="mt-20 rounded-2xl border border-border bg-surface-elevated p-10 lg:p-14">
-              <h3 className="font-display text-2xl font-bold tracking-tight text-foreground">
-                Our History
-              </h3>
-              <p className="mt-4 leading-relaxed text-muted">
-                Paws for Change India was founded in 2015 by Dr. Priya Sharma, a veterinarian who
-                saw the immense suffering of street animals in Mumbai and decided to act. What began
-                as a small shelter operating out of a rented garage has since grown into one of
-                India&apos;s most respected animal welfare organisations. Today, we operate across
-                five cities with a team of over 50 staff, 500+ volunteers, and a track record of
-                transforming the lives of thousands of animals every year.
-              </p>
+            <div className="mt-20 grid gap-8 lg:grid-cols-3">
+              <div className="lg:col-span-2 rounded-2xl border border-border bg-surface-elevated p-10 lg:p-14">
+                <h3 className="font-display text-2xl font-bold tracking-tight text-foreground">
+                  Our History
+                </h3>
+                <p className="mt-4 leading-relaxed text-muted">
+                  Paws for Change India was founded in 2015 by Dr. Priya Sharma, a veterinarian who
+                  saw the immense suffering of street animals in Mumbai and decided to act. What began
+                  as a small shelter operating out of a rented garage has since grown into one of
+                  India&apos;s most respected animal welfare organisations. Today, we operate across
+                  five cities with a team of over 50 staff, 500+ volunteers, and a track record of
+                  transforming the lives of thousands of animals every year.
+                </p>
+              </div>
+              <div className="overflow-hidden rounded-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=600&q=80&fm=webp&fit=crop"
+                  alt="Rescued animal at our shelter"
+                  className="h-full w-full object-cover animate-fade-in"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
       {/* ════════════════ Timeline ════════════════ */}
-      <section className="bg-surface py-24">
+      <section className="relative bg-surface py-24">
+        {/* Decorative pet images */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute bottom-[20%] right-[3%] h-44 w-44 overflow-hidden rounded-2xl opacity-[0.04]">
+            <img src="https://images.unsplash.com/photo-1546527868-ccb7ee7dfa6a?w=320&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+          </div>
+          <div className="absolute top-[15%] left-[2%] h-28 w-28 overflow-hidden rounded-2xl opacity-[0.03]">
+            <img src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=220&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+          </div>
+        </div>
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">

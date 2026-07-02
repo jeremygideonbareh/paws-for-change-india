@@ -25,6 +25,18 @@ function formatDate(dateString: string): string {
 export default function BlogPage() {
   return (
     <section className="relative bg-background py-24">
+      {/* Decorative pet images */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute top-[10%] right-[4%] h-36 w-36 overflow-hidden rounded-2xl opacity-[0.04]">
+          <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=260&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+        </div>
+        <div className="absolute bottom-[15%] left-[3%] h-28 w-28 overflow-hidden rounded-2xl opacity-[0.04]">
+          <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=200&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+        </div>
+        <div className="absolute top-[40%] left-[8%] h-20 w-20 overflow-hidden rounded-xl opacity-[0.03]">
+          <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=160&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+        </div>
+      </div>
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <ScrollReveal>

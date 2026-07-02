@@ -73,10 +73,26 @@ const stats = [
 export default function ImpactStats() {
   return (
     <section className="relative bg-surface py-24">
-      {/* Decorative photo */}
+      {/* Decorative photos */}
       <div className="pointer-events-none absolute right-0 top-0 h-72 w-72 overflow-hidden opacity-[0.04] max-md:hidden">
         <img
           src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=400&q=60&fm=webp&fit=crop"
+          alt=""
+          className="h-full w-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="pointer-events-none absolute left-0 bottom-0 h-56 w-56 overflow-hidden opacity-[0.03] max-md:hidden">
+        <img
+          src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=300&q=60&fm=webp&fit=crop"
+          alt=""
+          className="h-full w-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="pointer-events-none absolute top-1/3 left-[5%] h-32 w-32 overflow-hidden rounded-full opacity-[0.03] max-md:hidden">
+        <img
+          src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=200&q=60&fm=webp&fit=crop"
           alt=""
           className="h-full w-full object-cover"
           aria-hidden="true"

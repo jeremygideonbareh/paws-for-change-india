@@ -196,6 +196,18 @@ export default function DonatePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/10" />
         </div>
+        {/* Floating pet images */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute top-[10%] left-[8%] h-24 w-24 rotate-12 overflow-hidden rounded-xl opacity-[0.06]">
+            <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=180&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+          </div>
+          <div className="absolute bottom-[20%] right-[10%] h-28 w-28 -rotate-6 overflow-hidden rounded-xl opacity-[0.05]">
+            <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=200&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+          </div>
+          <div className="absolute top-[40%] right-[5%] h-16 w-16 rotate-45 overflow-hidden rounded-lg opacity-[0.04]">
+            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=140&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+          </div>
+        </div>
 
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           <motion.div

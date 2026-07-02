@@ -24,6 +24,23 @@ const values = [
 export default function About() {
   return (
     <section id="about" className="relative bg-background py-24">
+      {/* Decorative pet images */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute top-[10%] right-[3%] h-32 w-32 overflow-hidden rounded-2xl opacity-[0.04]">
+          <img
+            src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=250&q=60&fm=webp&fit=crop"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="absolute bottom-[20%] left-[2%] h-40 w-40 overflow-hidden rounded-2xl opacity-[0.03]">
+          <img
+            src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=300&q=60&fm=webp&fit=crop"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </div>
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-16 lg:grid-cols-5">
         <motion.div

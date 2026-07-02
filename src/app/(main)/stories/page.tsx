@@ -26,6 +26,18 @@ function formatDate(dateString: string): string {
 export default function StoriesPage() {
   return (
     <section className="relative bg-background py-24">
+      {/* Decorative pet images */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute top-[8%] right-[3%] h-40 w-40 overflow-hidden rounded-2xl opacity-[0.04]">
+          <img src="https://images.unsplash.com/photo-1453227588063-bb302b62f50b?w=300&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+        </div>
+        <div className="absolute bottom-[20%] left-[4%] h-32 w-32 overflow-hidden rounded-2xl opacity-[0.04]">
+          <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?w=240&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+        </div>
+        <div className="absolute top-[50%] left-[10%] h-20 w-20 overflow-hidden rounded-xl opacity-[0.03]">
+          <img src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=160&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+        </div>
+      </div>
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <ScrollReveal>

@@ -141,6 +141,15 @@ export default function ContactPage() {
           <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-accent/8 blur-[140px]" />
           <div className="absolute -bottom-40 -left-40 h-[400px] w-[400px] rounded-full bg-accent-light/5 blur-[120px]" />
         </div>
+        {/* Decorative pet images */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute top-[20%] right-[5%] h-32 w-32 overflow-hidden rounded-2xl opacity-[0.05]">
+            <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=200&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+          </div>
+          <div className="absolute bottom-[15%] left-[3%] h-40 w-40 overflow-hidden rounded-2xl opacity-[0.04]">
+            <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=250&q=60&fm=webp&fit=crop" alt="" className="h-full w-full object-cover" />
+          </div>
+        </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <motion.div

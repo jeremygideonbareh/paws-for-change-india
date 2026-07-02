@@ -1,9 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useReducedMotion } from 'motion/react';
+import { motion } from 'motion/react';
 import {
   Heartbeat,
   PawPrint,
@@ -12,8 +9,6 @@ import {
   BookOpen,
   Siren,
 } from '@phosphor-icons/react';
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface Program {
   icon: React.ElementType;
@@ -81,144 +76,122 @@ const programs: Program[] = [
   },
 ];
 
+const ease = [0.25, 0.1, 0.25, 1] as const;
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 60 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      delay: i * 0.12,
+      ease,
+    },
+  }),
+};
+
+const statVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease },
+  },
+};
+
 export default function Programs() {
-  const wrap = useRef<HTMLDivElement>(null);
-  const track = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
-
-  useEffect(() => {
-    if (reduce) return;
-    if (!wrap.current || !track.current) return;
-
-    const ctx = gsap.context(() => {
-      const trackEl = track.current;
-      if (!trackEl) return;
-
-      const distance = trackEl.scrollWidth - window.innerWidth;
-      if (distance <= 0) return;
-
-      const buffer = window.innerHeight * 0.5;
-      const scrollDistance = distance + buffer;
-
-      ScrollTrigger.create({
-        trigger: wrap.current,
-        start: 'top top',
-        end: () => `+=${scrollDistance}`,
-        pin: true,
-        anticipatePin: 1,
-        scrub: 1.5,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          const scrolled = self.progress * scrollDistance;
-          const xProgress = Math.min(scrolled / distance, 1);
-          gsap.set(trackEl, { x: -xProgress * distance });
-        },
-      });
-    }, wrap);
-
-    return () => ctx.revert();
-  }, [reduce]);
-
   return (
-    <section
-      id="programs"
-      ref={wrap}
-      className="relative overflow-hidden bg-background"
-    >
-      {/* ── Fixed title panel ── */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 flex w-[35vw] min-w-[320px] max-w-[480px] items-center justify-center px-12">
-        <div className="relative flex h-full w-full items-center justify-center">
-          {/* Gradient backdrop — fades into the scrolling cards */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-transparent" />
-
-          <div className="relative z-10 max-w-sm">
-            <span className="font-body text-[11px] font-medium uppercase tracking-[0.2em] text-accent">
-              Our Programs
-            </span>
-            <h2 className="mt-4 font-display text-5xl font-bold leading-[1.05] tracking-tighter text-foreground">
-              How We
-              <br />
-              <span className="text-accent">Help</span>
-            </h2>
-            <p className="mt-4 font-body text-sm leading-relaxed text-muted">
-              Every year, we reach thousands of animals through our
-              comprehensive programs — from emergency rescue to lifelong
-              adoption.
-            </p>
-            <div className="mt-8 h-px w-16 bg-accent/50" />
-          </div>
-        </div>
+    <section id="programs" className="relative bg-background py-24">
+      {/* Decorative background orbs */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-0 h-[500px] w-[500px] rounded-full bg-accent/8 blur-[140px]" />
+        <div className="absolute -bottom-32 right-1/4 h-[400px] w-[400px] rounded-full bg-accent-light/5 blur-[120px]" />
       </div>
 
-      {/* ── Scrolling card track ── */}
-      <div
-        ref={track}
-        className="flex h-[100dvh] items-center gap-6 will-change-transform"
-      >
-        {/* Invisible spacer matching the fixed title panel width */}
-        <div
-          className="shrink-0"
-          style={{ width: 'clamp(320px, 35vw, 480px)' }}
-        />
+      <div className="mx-auto max-w-7xl px-6">
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <span className="font-body text-[11px] font-medium uppercase tracking-[0.2em] text-accent">
+            Our Programs
+          </span>
+          <h2 className="mt-4 gradient-text text-4xl font-bold tracking-tight sm:text-5xl">
+            How We Help
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-muted">
+            Every year, we reach thousands of animals through our comprehensive programs — from
+            emergency rescue to lifelong adoption.
+          </p>
+          <div className="mx-auto mt-6 h-px w-16 bg-accent/50" />
+        </motion.div>
 
-        {programs.map((program, i) => {
-          const Icon = program.icon;
-          return (
-            <div
-              key={program.title}
-              className="group relative flex w-[420px] shrink-0 flex-col overflow-hidden rounded-2xl border border-border bg-surface-elevated"
-              style={{ minHeight: 'clamp(50vh, 70vh, 600px)' }}
-            >
-              {/* ── Card image ── */}
-              <div className="relative h-[45%] min-h-[200px] overflow-hidden">
-                <img
-                  src={`https://images.unsplash.com/photo-${program.imageUrl}?w=600&q=80&fm=webp&fit=crop`}
-                  alt={program.title}
-                  className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105 animate-fade-in"
-                  loading={i < 2 ? 'eager' : 'lazy'}
-                />
-                {/* Gradient overlay from image into content */}
-                <div className="absolute inset-0 bg-gradient-to-t from-surface-elevated via-surface-elevated/10 to-transparent" />
-              </div>
-
-              {/* ── Card content ── */}
-              <div className="flex flex-1 flex-col justify-between p-7">
-                <div>
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10">
-                      <Icon
-                        className="h-5 w-5 text-accent"
-                        weight="bold"
-                      />
-                    </div>
-                    <h3 className="font-display text-xl font-semibold text-foreground">
-                      {program.title}
-                    </h3>
+        {/* Card grid */}
+        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {programs.map((program, i) => {
+            const Icon = program.icon;
+            return (
+              <motion.div
+                key={program.title}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.15 }}
+                variants={cardVariants}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface-elevated transition-shadow duration-500 hover:shadow-lg"
+              >
+                {/* Card image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={`https://images.unsplash.com/photo-${program.imageUrl}?w=600&q=80&fm=webp&fit=crop`}
+                    alt={program.title}
+                    className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
+                    loading={i < 2 ? 'eager' : 'lazy'}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-elevated via-surface-elevated/10 to-transparent" />
+                  {/* Icon overlay */}
+                  <div className="absolute top-4 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-background/80 backdrop-blur-sm">
+                    <Icon className="h-5 w-5 text-accent" weight="bold" />
                   </div>
-                  <p className="mt-4 font-body text-sm leading-relaxed text-muted">
+                </div>
+
+                {/* Card content */}
+                <div className="flex flex-1 flex-col p-7">
+                  <h3 className="font-display text-xl font-semibold text-foreground">
+                    {program.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
                     {program.description}
                   </p>
+
+                  {/* Stat */}
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={statVariants}
+                    className="mt-6 flex items-baseline gap-3 border-t border-border pt-5"
+                  >
+                    <span className="font-display text-3xl font-bold tracking-tight text-accent">
+                      {program.stat}
+                    </span>
+                    <span className="font-body text-xs font-medium uppercase tracking-[0.12em] text-muted">
+                      {program.statLabel}
+                    </span>
+                  </motion.div>
                 </div>
 
-                {/* ── Stat ── */}
-                <div className="mt-6 flex items-baseline gap-3 border-t border-border pt-5">
-                  <span className="font-display text-3xl font-bold tracking-tight text-accent">
-                    {program.stat}
-                  </span>
-                  <span className="font-body text-xs font-medium uppercase tracking-[0.12em] text-muted">
-                    {program.statLabel}
-                  </span>
-                </div>
-              </div>
-
-              {/* Hover ring */}
-              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 ring-1 ring-inset ring-accent/20 transition-opacity duration-500 group-hover:opacity-100" />
-            </div>
-          );
-        })}
-
-        {/* Trailing breathing room */}
-        <div className="shrink-0 w-16" />
+                {/* Hover ring */}
+                <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 ring-1 ring-inset ring-accent/20 transition-opacity duration-500 group-hover:opacity-100" />
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
